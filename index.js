@@ -8,6 +8,7 @@ var rsvp = require('rsvp');
 var Promise = rsvp.Promise;
 var fs = require('fs');
 var writeFile = rsvp.denodeify(fs.writeFile);
+var globImporter = require('sass-glob-importer');
 
 module.exports = SassCompiler;
 SassCompiler.prototype = Object.create(CachingWriter.prototype);
@@ -35,7 +36,7 @@ function SassCompiler (inputNodes, inputFile, outputFile, options) {
   this.renderSass = rsvp.denodeify(sass.render);
 
   this.sassOptions = {
-    importer: options.importer,
+    importer: globImporter(),
     functions: options.functions,
     indentedSyntax: options.indentedSyntax,
     omitSourceMapUrl: options.omitSourceMapUrl,

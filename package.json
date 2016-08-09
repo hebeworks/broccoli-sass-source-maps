@@ -26,5 +26,8 @@
   },
   "files": [
     "*.js"
-  ]
+  ],
+  "devDependencies": {
+    "sass-glob-importer": "^1.0.1"
+  }
 }
