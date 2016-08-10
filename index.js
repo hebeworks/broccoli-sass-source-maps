@@ -8,7 +8,7 @@ var rsvp = require('rsvp');
 var Promise = rsvp.Promise;
 var fs = require('fs');
 var writeFile = rsvp.denodeify(fs.writeFile);
-var globImporter = require('sass-glob-importer');
+var globImporter = require('node-sass-globbing');
 
 module.exports = SassCompiler;
 SassCompiler.prototype = Object.create(CachingWriter.prototype);
